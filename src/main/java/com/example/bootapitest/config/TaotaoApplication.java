@@ -2,7 +2,9 @@ package com.example.bootapitest.config;
 
 import javax.sql.DataSource;
 
-import com.example.bootapitest.day.v2.day8.Myservlet;
+import com.example.bootapitest.day.v2.day8.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,6 +24,7 @@ import com.jolbox.bonecp.BoneCPDataSource;
 @ComponentScan(basePackages = "com.example")
 //@ImportResource(value = "classpath:dubbo/dubbo-consumer.xml")
 @SpringBootApplication
+//@ServletComponentScan("com.example")
 public class TaotaoApplication extends SpringBootServletInitializer{
 
     @Value("${jdbc.url}")
@@ -35,6 +38,8 @@ public class TaotaoApplication extends SpringBootServletInitializer{
 
     @Value("${jdbc.password}")
     private String jdbcPassword;
+
+
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
@@ -72,14 +77,32 @@ public class TaotaoApplication extends SpringBootServletInitializer{
 
     /**
      * 使用代码注册Servlet（不需要@ServletComponentScan注解）
-     *
      * @return
      * @author SHANHY
      * @create  2016年1月6日
      */
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBean() {
+//        return new ServletRegistrationBean(new Myservlet(), "/xs/*");// ServletName默认值为首字母小写，即myServlet
+//    }
+//
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBean2() {
+//        return new ServletRegistrationBean(new GenericServletDemo1(), "/xz/*");// ServletName默认值为首字母小写，即myServlet
+//    }
+//
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBean3() {
+//        return new ServletRegistrationBean(new HttpServletDemo(), "/xy/*");// ServletName默认值为首字母小写，即myServlet
+//    }
+
     @Bean
-    public ServletRegistrationBean servletRegistrationBean() {
-        return new ServletRegistrationBean(new Myservlet(), "/xs/*");// ServletName默认值为首字母小写，即myServlet
+    public ServletRegistrationBean servletRegistrationBeanget() {
+        return new ServletRegistrationBean(new ServletGetMessage(), "/xg/*");// ServletName默认值为首字母小写，即myServlet
+    }
+    @Bean
+    public ServletRegistrationBean servletRegistrationBeangetContest() {
+        return new ServletRegistrationBean(new ServletContestGetMessage(), "/xcontest/*");// ServletName默认值为首字母小写，即myServlet
     }
 
 

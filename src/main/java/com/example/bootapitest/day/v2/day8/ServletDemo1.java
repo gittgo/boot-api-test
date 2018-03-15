@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.*;
 import java.io.IOException;
 
-@RestController
 public class ServletDemo1 implements Servlet {
 
 

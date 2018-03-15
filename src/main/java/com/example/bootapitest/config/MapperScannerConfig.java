@@ -13,7 +13,7 @@ public class MapperScannerConfig {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
-        mapperScannerConfigurer.setBasePackage("com.example.bootapitest.people.mapper");
+        mapperScannerConfigurer.setBasePackage("com.example.bootapitest.people.mapper,com.example.bootapitest.hntest.mapper");
         return mapperScannerConfigurer;
     }
 

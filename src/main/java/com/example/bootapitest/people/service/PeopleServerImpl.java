@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PeopleServerImpl implements PeopleServer{
 
-
     @Autowired
     private PeopleMapper peopleMapper;
 

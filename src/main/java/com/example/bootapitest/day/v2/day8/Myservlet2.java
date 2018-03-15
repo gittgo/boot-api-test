@@ -1,22 +1,24 @@
 package com.example.bootapitest.day.v2.day8;
 
-import java.io.IOException;
-
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 
-public class Myservlet implements Servlet{
+@WebServlet(urlPatterns="/st/myservlet2", description="Servlet的说明")
+public class Myservlet2 implements Servlet{
 
 
     // 实例化
-    public Myservlet(){
-        System.out.println("*****************Myservlet  实例化 执行了 ******************");
+    public Myservlet2(){
+        System.out.println("*****************Myservlet  实例化2 执行了 ******************");
     }
 
     // 初始化
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        System.out.println("*****************Myservlet  初始化 执行了 ******************");
+        System.out.println("*****************Myservlet  初始化2 执行了 ******************");
     }
 
 
@@ -25,13 +27,24 @@ public class Myservlet implements Servlet{
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
 
-        System.out.println("*****************Myservlet  服务 执行了 ******************");
+        System.out.println(">>>>>>>>>>doPost2()<<<<<<<<<<<");
+        servletResponse.setContentType("text/html");
+        servletResponse.setCharacterEncoding("utf-8");
+        PrintWriter out = servletResponse.getWriter();
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Hello World</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>大家好，我的名字叫Servlet2</h1>");
+        out.println("</body>");
+        out.println("</html>");
     }
 
     // 销毁
     @Override
     public void destroy() {
-        System.out.println("*****************Myservlet  销毁 执行了 ******************");
+        System.out.println("*****************Myservlet  销毁2 执行了 ******************");
     }
 
     @Override

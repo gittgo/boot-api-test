@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.example.bootapitest.hntest.mapper.TypeMapper">
+
+
+    <resultMap id="test1" type="com.example.bootapitest.hntest.dto.TypeExponentDto">
+        <id column="id" property="id"/>
+        <result column="t_id" property="tId"/>
+        <result column="t_name" property="tName"/>
+        <result column="content" property="content"/>
+        <collection property="funExponents" ofType="com.example.bootapitest.hntest.entity.FunExponent">
+            <id column="cid" property="id"/>
+            <result column="ctid" property="tId"/>
+            <result column="country" property="country"/>
+            <result column="exponent" property="exponent"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectByMyThink" resultMap="test1">
+        SELECT a.id,
+        a.t_id AS t_id,
+        a.t_name AS t_name,
+        a.content AS content,
+        b.id AS cid,
+        b.t_id AS ctid,
+        b.country,
+        b.exponent
+        FROM type_exponent a JOIN fun_exponent b on a.t_id = b.t_id
+    </select>
+
+
+
+
+</mapper>
