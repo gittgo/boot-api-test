@@ -22,6 +22,12 @@ public class ReflectTests {
 
 	@Test
 	public void contextLoads() throws Exception{
+	    if(8*0.1==0.8){
+            System.out.println("true");
+        }else {
+
+            System.out.println("false");
+        }
         IMsg obj = null;
         obj = (IMsg)Class.forName("com.example.bootapitest.bookschema.oneReflect.FileMsg").newInstance();
         obj.process("Hello word");
