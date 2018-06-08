@@ -2,6 +2,7 @@ package com.example.twoSingleton;
 
 
 import com.example.bootapitest.bookschema.twoSingleton.FileLogger;
+import com.example.bootapitest.bookschema.twoSingleton.TesterLog;
 import com.example.bootapitest.config.TaotaoApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,6 +22,21 @@ public class SingletonTest {
         obj.write("日志书写");
         obj.write("日志完成");
         obj.close();
+    }
+
+
+    @Test
+    public void logTest2(){
+        int s = 2;
+        TesterLog testerLog = new TesterLog();
+        if(s>0){
+            testerLog.log("大于0");
+        }
+        if(s>1){
+            testerLog.log("大于1");
+        }
+
+
     }
 
 

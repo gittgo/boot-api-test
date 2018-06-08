@@ -8,7 +8,7 @@ import java.util.Date;
 public class FileLogger {
 
     // 日志路径
-    private String path = "/Users/rock/IdeaProjects/boot-api-test/src/main/java/com/example/bootapitest/bookschema/twoSingleton/log";
+    private String path = "c:/test/test.log";
 
     private FileOutputStream out;
     private FileLogger() throws Exception{
