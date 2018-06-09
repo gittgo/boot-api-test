@@ -6,6 +6,8 @@ import com.example.bootapitest.hntest.service.TypeServer;
 import com.example.bootapitest.people.entity.People;
 import com.example.bootapitest.people.service.BaseRestController;
 import com.example.bootapitest.people.service.PeopleServer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +19,8 @@ import java.util.List;
 @RestController
 public class HelloController extends BaseRestController {
 
+    private static Logger logger = LogManager.getLogger(HelloController.class);
+
 
     @Autowired
     PeopleServer peopleServer;
@@ -27,6 +31,10 @@ public class HelloController extends BaseRestController {
 
     @RequestMapping(value = "/getOne", method = RequestMethod.GET)
     public List<TypeExponentDto> getOne(int id) {
+
+
+        logger.debug("是两遍吗？");
+
 
         System.out.println("======begin");
 //        List<TypeExponentDto> typeExponents = typeServer.getTypeExponent();
