@@ -3,6 +3,7 @@ package com.example.bootapitest.config;
 import javax.sql.DataSource;
 
 import com.example.bootapitest.day.v2.day8.*;
+import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +18,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import com.jolbox.bonecp.BoneCPDataSource;
+
+import java.util.Properties;
 
 @Configuration
 @PropertySource(value = { "classpath:jdbc.properties",
@@ -56,8 +59,6 @@ public class TaotaoApplication extends SpringBootServletInitializer{
         boneCPDataSource.setIdleConnectionTestPeriodInMinutes(60);
         // 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
         boneCPDataSource.setIdleMaxAgeInMinutes(30);
-
-
         // 每个分区最大的连接数
         boneCPDataSource.setMaxConnectionsPerPartition(100);
         // 每个分区最小的连接数
@@ -96,14 +97,15 @@ public class TaotaoApplication extends SpringBootServletInitializer{
 //        return new ServletRegistrationBean(new HttpServletDemo(), "/xy/*");// ServletName默认值为首字母小写，即myServlet
 //    }
 
-    @Bean
-    public ServletRegistrationBean servletRegistrationBeanget() {
-        return new ServletRegistrationBean(new ServletGetMessage(), "/xg/*");// ServletName默认值为首字母小写，即myServlet
-    }
-    @Bean
-    public ServletRegistrationBean servletRegistrationBeangetContest() {
-        return new ServletRegistrationBean(new ServletContestGetMessage(), "/xcontest/*");// ServletName默认值为首字母小写，即myServlet
-    }
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBeanget() {
+//        return new ServletRegistrationBean(new ServletGetMessage(), "/xg/*");// ServletName默认值为首字母小写，即myServlet
+//    }
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBeangetContest() {
+//        return new ServletRegistrationBean(new ServletContestGetMessage(), "/xcontest/*");// ServletName默认值为首字母小写，即myServlet
+//    }
+
 
 
 }

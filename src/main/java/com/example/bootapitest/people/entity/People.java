@@ -10,115 +10,36 @@ public class People {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int peopleId;
+    private Integer id;
 
     @Column
-    private String peoplePhone;
+    private String name;
+
     @Column
-    private String peopleName;
-    @Column
-    private String peoplePassword;
-    @Column
-    private Date peopleDatetime;
-    @Column
-    private String peopleMail;
-    @Column
-    private int peopleState;
-    @Column
-    private String peopleCode;
-    @Column
-    private Date peopleCodesenddate;
-    @Column
-    private int peoplePhonecheck;
-    @Column
-    private int peopleMaillcheck;
+    private Integer age;
 
 
-    public int getPeopleId() {
-        return peopleId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPeopleId(int peopleId) {
-        this.peopleId = peopleId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getPeoplePhone() {
-        return peoplePhone;
+    public String getName() {
+        return name;
     }
 
-    public void setPeoplePhone(String peoplePhone) {
-        this.peoplePhone = peoplePhone;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPeopleName() {
-        return peopleName;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setPeopleName(String peopleName) {
-        this.peopleName = peopleName;
-    }
-
-    public String getPeoplePassword() {
-        return peoplePassword;
-    }
-
-    public void setPeoplePassword(String peoplePassword) {
-        this.peoplePassword = peoplePassword;
-    }
-
-    public Date getPeopleDatetime() {
-        return peopleDatetime;
-    }
-
-    public void setPeopleDatetime(Date peopleDatetime) {
-        this.peopleDatetime = peopleDatetime;
-    }
-
-    public String getPeopleMail() {
-        return peopleMail;
-    }
-
-    public void setPeopleMail(String peopleMail) {
-        this.peopleMail = peopleMail;
-    }
-
-    public int getPeopleState() {
-        return peopleState;
-    }
-
-    public void setPeopleState(int peopleState) {
-        this.peopleState = peopleState;
-    }
-
-    public String getPeopleCode() {
-        return peopleCode;
-    }
-
-    public void setPeopleCode(String peopleCode) {
-        this.peopleCode = peopleCode;
-    }
-
-    public Date getPeopleCodesenddate() {
-        return peopleCodesenddate;
-    }
-
-    public void setPeopleCodesenddate(Date peopleCodesenddate) {
-        this.peopleCodesenddate = peopleCodesenddate;
-    }
-
-    public int getPeoplePhonecheck() {
-        return peoplePhonecheck;
-    }
-
-    public void setPeoplePhonecheck(int peoplePhonecheck) {
-        this.peoplePhonecheck = peoplePhonecheck;
-    }
-
-    public int getPeopleMaillcheck() {
-        return peopleMaillcheck;
-    }
-
-    public void setPeopleMaillcheck(int peopleMaillcheck) {
-        this.peopleMaillcheck = peopleMaillcheck;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

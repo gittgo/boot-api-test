@@ -40,9 +40,16 @@ Configuration:
         - ref: CONSOLE
         - ref: ROLLING_FILE
     Logger: # 为com.xjj包配置特殊的Log级别，方便调试
-      - name: com.test.dao
+      - name: com.example
         additivity: false
         level: debug
         AppenderRef:
           - ref: CONSOLE
           - ref: ROLLING_FILE
+#    Logger:
+#      - name: com.example.bootapitest #复数加上-
+#          additivity: false # 去除重复的log
+#          level: debug
+#          AppenderRef:
+#            - ref: CONSOLE #复数加上-
+#            - ref: ROLLING_FILE #复数加上-

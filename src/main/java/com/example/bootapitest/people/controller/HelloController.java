@@ -2,10 +2,8 @@ package com.example.bootapitest.people.controller;
 
 
 import com.example.bootapitest.hntest.dto.TypeExponentDto;
-import com.example.bootapitest.hntest.entity.TypeExponent;
 import com.example.bootapitest.hntest.service.TypeServer;
 import com.example.bootapitest.people.entity.People;
-import com.example.bootapitest.people.entity.Result;
 import com.example.bootapitest.people.service.BaseRestController;
 import com.example.bootapitest.people.service.PeopleServer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.Charset;
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class HelloController extends BaseRestController {
     public List<TypeExponentDto> getOne(int id) {
 
         System.out.println("======begin");
-        List<TypeExponentDto> typeExponents = typeServer.getTypeExponent();
+//        List<TypeExponentDto> typeExponents = typeServer.getTypeExponent();
         System.out.println("======end");
 
         //获取系统默认编码
@@ -53,12 +50,20 @@ public class HelloController extends BaseRestController {
 //          return error("id输入有误");
         }
         People p = peopleServer.getPeopleByid(id);
-        System.out.println(p.getPeopleId());
-        System.out.println(p.getPeopleName());
+        System.out.println(p.getName());
 //        return success(typeExponents);
-        return typeExponents;
+//        return typeExponents;
+    return  null;
     }
 
+
+
+    @RequestMapping(value = "/getList", method = RequestMethod.GET)
+    public List<TypeExponentDto> getList() {
+        peopleServer.select();
+
+        return null;
+    }
 
 
 
