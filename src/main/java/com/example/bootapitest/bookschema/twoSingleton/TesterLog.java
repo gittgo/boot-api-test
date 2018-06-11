@@ -7,10 +7,9 @@ public class TesterLog {
 
     public void log (String s){
         try{
-            File file = new File("c:/test/test.log");
-            FileWriter wr = new FileWriter(file);
-            wr.write(s);
-            wr.close();
+            FileWriter  file = new FileWriter ("c:/test/test.log",true);
+            file.write(s);
+            file.close();
         }catch (Exception e){
             e.printStackTrace();
         }

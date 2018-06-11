@@ -41,7 +41,7 @@ Configuration:
         - ref: ROLLING_FILE
     Logger: # 为com.xjj包配置特殊的Log级别，方便调试
       - name: com.example
-        additivity: false
+        additivity: true
         level: debug
         AppenderRef:
           - ref: CONSOLE
