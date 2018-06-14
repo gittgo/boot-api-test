@@ -18,6 +18,12 @@ public class People {
     @Column
     private Integer age;
 
+    public People(){};
+
+    public  People(String name){
+        this.name = name;
+    }
+
 
     public Integer getId() {
         return id;

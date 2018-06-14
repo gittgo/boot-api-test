@@ -5,6 +5,7 @@ import com.example.bootapitest.bookschema.fiveprototype.testSerializable.Address
 import com.example.bootapitest.bookschema.fiveprototype.testSerializable.Student;
 import com.example.bootapitest.bookschema.fiveprototype.testSerializable.StudentDoubl;
 import com.example.bootapitest.config.TaotaoApplication;
+import com.example.bootapitest.people.entity.People;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.*;
+import java.util.function.Consumer;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TaotaoApplication.class)
@@ -37,6 +39,18 @@ public class PortotypeTest {
         System.out.println( student.getName());
         System.out.println( student.getAge());
         System.out.println( student.getAdd().getCity());
+
+    }
+
+    @Test
+    public void testconsumer(){
+        People userT = new People("zm");
+        //接受一个参数
+        Consumer<People> userTConsumer = userT1 -> userT1.setName("zmChange");
+        userTConsumer.accept(userT);
+        System.out.println(userT.getName());
+        System.out.println(userTConsumer.getClass());
+
 
     }
 //
