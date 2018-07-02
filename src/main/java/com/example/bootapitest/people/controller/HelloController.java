@@ -6,6 +6,7 @@ import com.example.bootapitest.hntest.service.TypeServer;
 import com.example.bootapitest.people.entity.People;
 import com.example.bootapitest.people.service.BaseRestController;
 import com.example.bootapitest.people.service.PeopleServer;
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class HelloController extends BaseRestController {
@@ -32,6 +34,7 @@ public class HelloController extends BaseRestController {
     @RequestMapping(value = "/getOne", method = RequestMethod.GET)
     public List<TypeExponentDto> getOne(int id) {
 
+        Map map = new HashedMap();
 
         logger.debug("是两遍吗？");
 
