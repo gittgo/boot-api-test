@@ -42,14 +42,14 @@ public class SingletonTest {
 
     @Test
     public void testSet(){
-        Integer[] ints = {1,2,3,2,4,5,6,4,7,3,8,9,3,10};
-        List<Integer> integers =  Arrays.asList(ints);
-
-        Set<Integer> sets = new HashSet();
-        sets.addAll(integers);
+        Integer[] ints = {1,1,3,2,3,2};
+        Set<Integer> sets = new LinkedHashSet<>();
+        sets.addAll(Arrays.asList(ints));
         for (int s:sets){
             System.out.println(s);
         }
+
+        System.out.println("3" instanceof  Object);
 
     }
 

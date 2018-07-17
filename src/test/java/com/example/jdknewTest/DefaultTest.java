@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
@@ -24,6 +25,13 @@ import javax.xml.namespace.QName;
 import javax.xml.rpc.ParameterMode;
 import javax.xml.rpc.ServiceException;
 
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -222,6 +230,48 @@ public class DefaultTest {
 
 
     }
+
+    // Date API
+    @Test
+    public void testClock(){
+        Clock clock = Clock.systemDefaultZone();
+        long millis = clock.millis();
+        Instant instant = clock.instant();
+        Date date = Date.from(instant);
+    }
+
+    @Test
+    public void testTimezones(){
+//        System.out.println(ZoneId.getAvailableZoneIds());
+
+        ZoneId zoneId1 = ZoneId.of("Europe/Berlin");
+        ZoneId zoneId2 = ZoneId.of("Brazil/East");
+
+//        System.out.println(zoneId1.getRules());
+//        System.out.println(zoneId2.getRules());
+
+        LocalTime now1 = LocalTime.now(zoneId1);
+        LocalTime now2 = LocalTime.now(zoneId2);
+//        System.out.println(now1.isBefore(now2));  // true
+
+        long hoursBetween = ChronoUnit.HOURS.between(now1, now2);
+        long minutesBetween = ChronoUnit.MINUTES.between(now1, now2);
+
+//        System.out.println(hoursBetween);       // 19
+//        System.out.println(minutesBetween);     // 1140
+
+        LocalTime late = LocalTime.of(23, 59, 59);
+        System.out.println(late);       // 23:59:59
+        DateTimeFormatter germanFormatter =
+                DateTimeFormatter
+                        .ofLocalizedTime(FormatStyle.SHORT)
+                        .withLocale(Locale.GERMAN);
+
+        LocalTime leetTime = LocalTime.parse("13:37", germanFormatter);
+        System.out.println(leetTime);   // 13:37
+
+    }
+
 
 
 

@@ -46,10 +46,3 @@ Configuration:
         AppenderRef:
           - ref: CONSOLE
           - ref: ROLLING_FILE
-#    Logger:
-#      - name: com.example.bootapitest #复数加上-
-#          additivity: false # 去除重复的log
-#          level: debug
-#          AppenderRef:
-#            - ref: CONSOLE #复数加上-
-#            - ref: ROLLING_FILE #复数加上-
