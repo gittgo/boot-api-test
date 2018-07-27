@@ -14,6 +14,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TaotaoApplication.class)
@@ -22,6 +23,7 @@ public class ReflectTests {
 
 	@Test
 	public void contextLoads() throws Exception{
+        ConcurrentHashMap hashMap = new ConcurrentHashMap();
 	    if(8*0.1==0.8){
             System.out.println("true");
         }else {
