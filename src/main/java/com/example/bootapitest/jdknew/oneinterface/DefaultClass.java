@@ -1,9 +1,10 @@
 package com.example.bootapitest.jdknew.oneinterface;
 
 
+import java.util.concurrent.Callable;
 import java.util.function.Predicate;
 
-public class DefaultClass implements DefaultA,DefaultB,Predicate {
+public class DefaultClass  implements DefaultA,DefaultB,Predicate,Callable {
     @Override
     public void dmath() {
         DefaultB.super.dmath();
@@ -59,6 +60,11 @@ public class DefaultClass implements DefaultA,DefaultB,Predicate {
 
     @Override
     public Predicate or(Predicate other) {
+        return null;
+    }
+
+    @Override
+    public Object call() throws Exception {
         return null;
     }
 }

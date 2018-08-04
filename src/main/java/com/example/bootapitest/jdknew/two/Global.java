@@ -15,6 +15,8 @@ public class Global {
      * 订单间隔分钟数未支付自动取消
      */
     public static final Integer ORDER_WAIT_BUYER_PAY_MINUTES = 0;
+
+
     /**
      * 订单间隔小时未支付自动取消
      */

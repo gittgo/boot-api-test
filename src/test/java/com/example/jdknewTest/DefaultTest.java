@@ -33,6 +33,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Predicate;
 
 @RunWith(SpringRunner.class)
@@ -102,6 +104,7 @@ public class DefaultTest {
         Predicate<Float> isFloat = a-> Float.isNaN(a);
     }
 
+
     @Test
     public void testFunction(){
 //        Function<String, Integer> toInteger = Integer::valueOf;
@@ -129,6 +132,14 @@ public class DefaultTest {
         StringBuffer str1 = new StringBuffer("good");
         StringBuffer str2 = new StringBuffer("bad");
         DefaultClass defaultClass = new DefaultClass();
+        ExecutorService es = Executors.newSingleThreadExecutor();
+
+        try{
+            es.submit(defaultClass);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         defaultClass.change(str1,str2);
         System.out.println(str1);
         System.out.println(str2);

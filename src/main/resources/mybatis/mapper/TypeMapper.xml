@@ -30,6 +30,18 @@
         FROM type_exponent a JOIN fun_exponent b on a.t_id = b.t_id
     </select>
 
+    <!--<insert id="insert" parameterType="com.rtwm.order.entity.OrderDetail">-->
+        <!--insert into trade_order_detail( detail_id,-->
+        <!--order_id,-->
+        <!--good_user_technology,-->
+        <!--if_show_good_type)-->
+        <!--values-->
+        <!--(#{detailId},#{orderId},#{goodsId},#{goodsName},#{goodsSkuId},#{goodsSku},-->
+        <!--{goodsPrice},#{goodsCount},#{unit},#{totalFee},#{goodsImg},#{factory},-->
+        <!--#{companyId},#{companyName},#{type},#{stock},#{takeType},#{deliveryDay},#{createTime},-->
+        <!--#{goodType},#{goodLong},#{goodWide},#{goodThick},#{goodUserTechnology},#{ifShowGoodType})#-->
+    <!--</insert>-->
+
 
 
 
