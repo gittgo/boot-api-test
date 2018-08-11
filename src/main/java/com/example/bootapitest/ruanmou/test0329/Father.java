@@ -2,7 +2,14 @@ package com.example.bootapitest.ruanmou.test0329;
 
 public class Father {
 
-    public String name;
+    public NameTest name = new NameTest();
+    static {
+        System.out.println("father static!");
+    }
+
+    {
+        System.out.println("father 静态!");
+    }
 
     public Father(){
         System.out.println("father 构造");

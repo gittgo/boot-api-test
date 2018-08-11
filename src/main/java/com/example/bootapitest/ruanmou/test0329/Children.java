@@ -3,6 +3,12 @@ package com.example.bootapitest.ruanmou.test0329;
 public class Children extends Father {
 
     public String name;
+    static {
+        System.out.println("Children static!");
+    }
+    {
+        System.out.println("Children 静态!");
+    }
 
     public Children(){
         System.out.println("chilren 构造!");

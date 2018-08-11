@@ -17,10 +17,10 @@ public class Test0329 {
     @Test
     public void test(){
         Father father = new Children();
+//        Father father2 = new Children();
 
-        father.name = "lkalalal";
 //        father.say();
-        father.test();
+//        father.test();
 //        father.call();
 //        Father.call();
 //        Children.call();
