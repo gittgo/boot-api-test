@@ -1,8 +1,8 @@
 package com.example.bootapitest.bookschema.fiveprototype.testSerializable;
 
-import java.io.Serializable;
+import java.io.*;
 
-public class Student  implements Serializable{
+public class Student  implements Cloneable,Serializable{
 
 //    private static final long serialVersionUID = 1L;
 
@@ -15,6 +15,21 @@ public class Student  implements Serializable{
         this.name = na;
         this.age = a;
         this.add = add;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+       Object object = null;
+       try {
+           ByteArrayOutputStream bos = new ByteArrayOutputStream();
+           ObjectOutputStream oos = new ObjectOutputStream(bos);
+           oos.writeObject(this);
+           // 从流中读取
+           ByteArrayInputStream ios = new ByteArrayInputStream(bos.toByteArray());
+           ObjectInputStream ois = new ObjectInputStream(ios);
+           object = ois.readObject();
+       }catch (Exception e){e.printStackTrace();}
+       return object;
     }
 
     public String getName() {
