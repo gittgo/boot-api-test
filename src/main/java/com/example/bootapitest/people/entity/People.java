@@ -18,6 +18,8 @@ public class People {
     @Column
     private Integer age;
 
+//    public String address;
+
     public People(){};
 
     public  People(String name){
@@ -48,4 +50,12 @@ public class People {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+//    public String getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(String address) {
+//        this.address = address;
+//    }
 }
