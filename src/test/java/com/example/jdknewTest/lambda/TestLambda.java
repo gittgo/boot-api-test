@@ -15,6 +15,7 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -115,6 +116,13 @@ public class TestLambda {
         }
         System.out.println("========");
         System.out.println("========");
+
+        UnaryOperator<Integer> b = x -> x.intValue();
+
+
+
+
+
 
 
 

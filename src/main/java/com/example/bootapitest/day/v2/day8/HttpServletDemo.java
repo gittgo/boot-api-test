@@ -20,6 +20,7 @@ public class HttpServletDemo extends HttpServlet{
             e.printStackTrace();
         }
 
+
         System.out.println(num+"***********************************");
     }
 

@@ -3,7 +3,7 @@ package com.example.bootapitest.config;
 import javax.sql.DataSource;
 
 import com.example.bootapitest.day.v2.day8.*;
-import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageHelper;PageHelper
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
