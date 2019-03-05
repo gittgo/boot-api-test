@@ -27,12 +27,12 @@ public class PageHelperTests {
 
 	@Test
 	public void pageHelperTest() throws Exception{
-//		HelloController helloController = new HelloController();
-//		helloController.getList(1);
-//
-//        PeopleServer peopleServer = new PeopleServerImpl();
-//        List<People> peopleList = peopleServer.select();
-//        System.out.println(peopleList.size());
+		HelloController helloController = new HelloController();
+		helloController.getList();
+
+        PeopleServer peopleServer = new PeopleServerImpl();
+        List<People> peopleList = peopleServer.select();
+        System.out.println(peopleList.size());
     }
 
 

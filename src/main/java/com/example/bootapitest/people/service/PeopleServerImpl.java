@@ -53,6 +53,7 @@ public class PeopleServerImpl implements PeopleServer{
          //1、设置分页信息，包括当前页数和每页显示的总计数
          PageHelper.startPage(page, rows);
          People people = new People();
+        people.setName("ttt");
          //2、执行查询
          List<People> list = peopleMapper.select(people);
          //3、获取分页查询后的数据
