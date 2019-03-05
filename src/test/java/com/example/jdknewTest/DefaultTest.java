@@ -6,7 +6,6 @@ import com.example.bootapitest.jdknew.oneinterface.DefaultBt;
 import com.example.bootapitest.jdknew.oneinterface.DefaultClass;
 import com.example.bootapitest.jdknew.two.Person;
 import com.example.bootapitest.jdknew.two.PersonFactory;
-import com.sun.xml.internal.ws.util.xml.XmlUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -76,8 +75,8 @@ public class DefaultTest {
     @Test
     public void TestFactory(){
         PersonFactory<Person> personFactory = Person::new;
-        Person person = personFactory.create("Peter", "Parker");
-        System.out.println(person.getFirstName());
+        Person person = personFactory.createt();
+//        System.out.println(person.getFirstName());
     }
 
 
