@@ -7,6 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TaotaoApplication.class)
 public class ChainTest {
@@ -17,5 +20,20 @@ public class ChainTest {
         MyChain2 myChain = new MyChain2();
         myChain.createChain();
         myChain.handle(request);
+    }
+
+
+    @Test
+    public void testfor(){
+        List<Integer>
+        list = null;
+//        for (int i: list) {
+//            System.out.println("true");
+//        }
+        if(list.isEmpty()){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
     }
 }
