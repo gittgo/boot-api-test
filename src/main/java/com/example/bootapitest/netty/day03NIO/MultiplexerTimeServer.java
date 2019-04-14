@@ -76,6 +76,14 @@ public class MultiplexerTimeServer implements Runnable{
             }
 // 多路复用器关闭后,所有注册在上面的Channel和Pipe等资源都会被自动注册并关闭,所以不需要重复释放资源
         }
+        if (selector!=null){
+            try{
+               selector.close();
+            }catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
 
     }
 
