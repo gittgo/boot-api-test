@@ -32,7 +32,9 @@ public class MultiplexerTimeServer implements Runnable{
             servChannel.configureBlocking(false);
             servChannel.socket().bind(new InetSocketAddress(port),1024);
             servChannel.register(selector, SelectionKey.OP_ACCEPT);
-            System.out.println("The time server is start in port : " + port);
+            System.out.println("The time server is start in port : " + port + servChannel.validOps());
+            System.out.println(SelectionKey.OP_ACCEPT & ~servChannel.validOps());
+//            System.out.println(~servChannel.validOps());
         } catch (IOException e){
             e.printStackTrace();
             System.exit(1);
@@ -66,8 +68,7 @@ public class MultiplexerTimeServer implements Runnable{
                     }catch (Exception e){
                         if (key != null){
                             key.cancel();
-                            if(key.channel() != null)
-                                key.channel().close();
+                            if(key.channel() != null){key.channel().close();};
                         }
                     }
                 }

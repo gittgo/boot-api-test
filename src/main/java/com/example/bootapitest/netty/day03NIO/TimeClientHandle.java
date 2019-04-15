@@ -23,6 +23,7 @@ public class TimeClientHandle implements Runnable {
     private volatile boolean stop;
 
     public TimeClientHandle(String host,int port){
+//        System.out.println(host == null ? "127.0.0.1":host);
         this.host = host == null ? "127.0.0.1":host;
         this.port = port;
         try {
@@ -71,12 +72,13 @@ public class TimeClientHandle implements Runnable {
             }
         }
 
-        if (selector != null)
+        if (selector != null) {
             try {
-            selector.close();
-            }catch (IOException e){
-            e.printStackTrace();
+                selector.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+        }
     }
 
     private void handleInput(SelectionKey key)throws IOException{
