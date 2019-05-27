@@ -33,7 +33,7 @@ public class AsyncTimeClientHandler implements CompletionHandler<Void,AsyncTimeS
     @Override
     public void run() {
         latch = new CountDownLatch(1);
-        client.connect(new InetSocketAddress(host,port));
+        client.connect(new InetSocketAddress(host,port),null,this);
         try {
             latch.await();
         }catch (InterruptedException e1){

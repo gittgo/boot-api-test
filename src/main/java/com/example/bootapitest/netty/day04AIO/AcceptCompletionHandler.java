@@ -20,10 +20,10 @@ public class AcceptCompletionHandler implements CompletionHandler<AsynchronousSo
     @Override
     public void failed(Throwable exc, AsyncTimeServerHandler attachment) {
         //
-        AsyncTimeServerHandler asyncTimeServerHandler = (AsyncTimeServerHandler)attachment;
+//        AsyncTimeServerHandler asyncTimeServerHandler = (AsyncTimeServerHandler)attachment;
         //
         exc.printStackTrace();
-        asyncTimeServerHandler.latch.countDown();
+        attachment.latch.countDown();
     }
 
 
