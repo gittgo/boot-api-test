@@ -19,7 +19,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
     private int counter;
     private byte[] req;
 
-    private TimeClientHandler() {
+    public TimeClientHandler() {
         req = ("QUERY TIME ORDER"+System.getProperty("line.separator")).getBytes();
     }
 

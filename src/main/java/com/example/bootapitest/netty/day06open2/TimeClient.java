@@ -26,7 +26,7 @@ public class TimeClient {
                     option(ChannelOption.TCP_NODELAY,true).
                     handler( new ChannelInitializer<SocketChannel>() {
                 @Override
-                protected void initChannel(SocketChannel socketChannel) throws Exception {
+                protected void initChannel(SocketChannel socketChannel){
                     socketChannel.pipeline().addLast(new LineBasedFrameDecoder(1024));
                     socketChannel.pipeline().addLast(new StringDecoder());
                     socketChannel.pipeline().addLast(new TimeClientHandler());
@@ -64,4 +64,3 @@ public class TimeClient {
     }
 
 }
-//  看到第五章
