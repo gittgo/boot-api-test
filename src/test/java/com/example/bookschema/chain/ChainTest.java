@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -16,10 +17,13 @@ public class ChainTest {
 
     @Test
     public void testChain(){
-        Request request = new Request(3);
-        MyChain2 myChain = new MyChain2();
-        myChain.createChain();
-        myChain.handle(request);
+
+        String timestamp =  (new Date()).getTime()/1000+"";
+        System.out.println(timestamp);
+//        Request request = new Request(3);
+//        MyChain2 myChain = new MyChain2();
+//        myChain.createChain();
+//        myChain.handle(request);
     }
 
 
