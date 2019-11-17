@@ -1,5 +1,6 @@
 package com.example.bootapitest.netty.day08google.marshalling03;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -7,18 +8,16 @@ import io.netty.channel.ChannelHandlerContext;
  * @author wang cheng wei
  * @date 2019-11-15 13:33
  */
+@ChannelHandler.Sharable
 public class SubReqServerHandler extends ChannelHandlerAdapter {
 
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        Request request = (Request) msg;
-        System.out.println("Server : " + request.getId() + ", " + request.getName() + ", " + request.getRequestMessage());
-        Response response = new Response();
-        response.setId(request.getId());
-        response.setName("response" + request.getId());
-        response.setResponseMessage("响应内容" + request.getId());
-        ctx.writeAndFlush(response);
+        Request request = (Request)msg;
+        System.out.println("姓名："+request.getName());
+        request.setRequestMessage("完毕");
+        ctx.writeAndFlush("完毕：" + request.getId());
     }
 
     @Override
