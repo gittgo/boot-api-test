@@ -41,7 +41,7 @@ public class ZubReqClient {
 
     public static void main(String[] args) {
         int port = 8080;
-        String host = "192.168.1.55";
+        String host = "127.0.0.1";
         new ZubReqClient().connect(port, host);
     }
 }
