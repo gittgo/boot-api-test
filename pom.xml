@@ -71,11 +71,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
-		<dependency>
-			<groupId>libh264converter</groupId>
-			<artifactId>libh264converter</artifactId>
-			<version>0.0.1</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>libh264converter</groupId>-->
+			<!--<artifactId>libh264converter</artifactId>-->
+			<!--<version>0.0.1</version>-->
+		<!--</dependency>-->
 
 
 		<!--<dependency>-->
